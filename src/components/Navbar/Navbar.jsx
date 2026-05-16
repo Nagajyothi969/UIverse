@@ -22,14 +22,16 @@ function Navbar() {
   const handleOpenNavbar = () =>{
     setIsOpen(prev=> !prev)
   }
+  const closeMenu =() =>{
+    setIsOpen(false)
+  }
 
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
-      <Link to="/" className="navbar-logo">
+      <Link to="/" className="navbar-logo" onClick={closeMenu}>
         <span className="navbar-logo-icon">⬡</span>
         UIverse
       </Link>
-
       <div className={`navbar-links ${isOpen ? "active" : ""}`}>
         <Link to="/" className={`navbar-link ${location.pathname === '/' ? 'active' : ''}`}>
           Home
@@ -45,7 +47,6 @@ function Navbar() {
         >
           GitHub ↗
         </a>
-
       </div>
       <button onClick = {handleOpenNavbar}
         className = "nav-btn"
