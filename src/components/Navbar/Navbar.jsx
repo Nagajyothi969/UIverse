@@ -1,10 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { FaBars, FaTimes } from 'react-icons/fa'
-
 import './Navbar.css'
 
 /* ================= ICONS ================= */
+
+// Hamburger menu icon (replaces FaBars from react-icons)
+const BarsIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+    <line x1="3" y1="6"  x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+)
+
+// Close / X icon (replaces FaTimes from react-icons)
+const TimesIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+    <line x1="18" y1="6"  x2="6"  y2="18"/>
+    <line x1="6"  y1="6"  x2="18" y2="18"/>
+  </svg>
+)
 
 const SunIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -123,7 +138,7 @@ function Navbar() {
         onClick={handleOpenNavbar}
         className="nav-btn"
       >
-        {isOpen ? <FaTimes /> : <FaBars />}
+        {isOpen ? <TimesIcon /> : <BarsIcon />}
       </button>
 
     </nav>
