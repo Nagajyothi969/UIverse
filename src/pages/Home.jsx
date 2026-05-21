@@ -34,6 +34,7 @@ const faqs = [
 ];
 
 
+
   useEffect(() => {
     const handleScroll = () => {
       setShowButton(window.scrollY > 300);
